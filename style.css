@@ -1,0 +1,320 @@
+:root {
+  --ink: #050505;
+  --blue: #2e43ff;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #fff;
+  color: var(--ink);
+  font-family: "Montserrat", Arial, sans-serif;
+  overflow-x: hidden;
+}
+a { color: inherit; }
+.poster {
+  position: relative;
+  width: min(100%, 864px);
+  aspect-ratio: 864 / 1536;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  container-type: inline-size;
+}
+
+/* Beach header and its soft white fade */
+.hero {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 67.7cqw;
+  background: #fff;
+}
+.cover-photo {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 60cqw;
+  overflow: hidden;
+  background: #8bb7df;
+}
+.cover-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+}
+.cover-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0) 60%,
+    rgba(255,255,255,.18) 72%,
+    rgba(255,255,255,.58) 87%,
+    #fff 100%
+  );
+}
+.star {
+  position: absolute;
+  z-index: 5;
+  top: 1.1cqw;
+  right: 1.8cqw;
+  color: #fff;
+  font-size: 7.4cqw;
+  line-height: 1;
+  text-shadow: 0 1px 1px rgba(0,0,0,.03);
+}
+.profile-photo {
+  position: absolute;
+  z-index: 4;
+  left: 1.8cqw;
+  top: 29.7cqw;
+  width: 32.5cqw;
+  height: 32.5cqw;
+  border: .55cqw solid var(--blue);
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d1d1d1;
+}
+.profile-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 27%;
+}
+.name {
+  position: absolute;
+  z-index: 3;
+  top: 39.25cqw;
+  left: 35.2cqw;
+  width: 63.5cqw;
+  margin: 0;
+  color: #fff;
+  font-size: 5.05cqw;
+  line-height: 1.05;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -.10cqw;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0,0,0,.16);
+}
+.about {
+  position: absolute;
+  z-index: 6;
+  top: 50.15cqw;
+  left: 36.2cqw;
+  width: 61cqw;
+}
+.about-title {
+  margin: 0 0 1cqw;
+  font-size: 2.9cqw;
+  line-height: 1.08;
+  font-weight: 900;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25cqw;
+  margin-top: 1.15cqw;
+  font-size: 1.78cqw;
+  line-height: 1.12;
+  font-weight: 900;
+  font-style: italic;
+  white-space: nowrap;
+}
+.location-icon {
+  display: block;
+  flex: 0 0 3.2cqw;
+  width: 3.2cqw;
+  height: 4.5cqw;
+}
+.birthday-row { padding-left: 4.45cqw; }
+
+.profile-divider {
+  position: absolute;
+  top: 66.8cqw;
+  left: 16.3cqw;
+  right: 2.2cqw;
+  height: .82cqw;
+  background: #050505;
+}
+
+/* Social icons: four across the first row, three across the left of row two */
+.social-section {
+  position: absolute;
+  inset: 0;
+}
+.social-section h2 {
+  position: absolute;
+  top: 69.55cqw;
+  left: 2cqw;
+  right: 2cqw;
+  margin: 0;
+  text-align: center;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 2.75cqw;
+  line-height: 1.15;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.social-grid {
+  position: absolute;
+  top: 76.9cqw;
+  left: 0;
+  width: 100%;
+  height: 45cqw;
+}
+.social-item {
+  position: absolute;
+  top: 0;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+.social-item:nth-child(1) { left: 0; }
+.social-item:nth-child(2) { left: 25%; }
+.social-item:nth-child(3) { left: 50%; }
+.social-item:nth-child(4) { left: 75%; }
+.social-item:nth-child(n+5) {
+  top: 23.9cqw;
+  width: 15.5%;
+}
+.social-item:nth-child(5) { left: 4.75%; }
+.social-item:nth-child(6) { left: 22.25%; }
+.social-item:nth-child(7) { left: 39.75%; }
+.logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 14.2cqw;
+  height: 14.2cqw;
+  margin: 0 auto 3.1cqw;
+  overflow: hidden;
+}
+.image-logo { background: transparent; }
+.image-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* Blend away the supplied Instagram asset's white margin against the page */
+.instagram-image img { mix-blend-mode: multiply; }
+.contact-logo {
+  border-radius: 3.1cqw;
+  background: #050505;
+}
+.contact-logo svg { display: block; width: 86%; height: 86%; }
+.telegram-logo {
+  border-radius: 50%;
+  background: #229ed9;
+}
+.telegram-logo svg { display: block; width: 86%; height: 86%; }
+.social-label {
+  display: block;
+  max-width: 100%;
+  font-size: 1.82cqw;
+  line-height: 1.12;
+  font-weight: 900;
+  font-style: italic;
+  white-space: nowrap;
+}
+.social-item:focus-visible,
+.drive-link:focus-visible {
+  outline: .35cqw solid #2648ff;
+  outline-offset: .6cqw;
+  border-radius: 1cqw;
+}
+
+/* Editing apps are beside the second social row, as in the reference image */
+.editing-section {
+  position: absolute;
+  top: 99.55cqw;
+  right: 2.5cqw;
+  width: 36.3cqw;
+  text-align: center;
+}
+.editing-section h2 {
+  margin: 0 0 2.05cqw;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 3.05cqw;
+  font-weight: 400;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.editing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2cqw;
+  align-items: start;
+}
+.app-item { min-width: 0; text-align: center; }
+.app-logo {
+  display: grid;
+  place-items: center;
+  width: 12.8cqw;
+  height: 12.8cqw;
+  margin: 0 auto 1.2cqw;
+  overflow: hidden;
+}
+.image-app-logo { background: transparent; }
+.image-app-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.app-name {
+  display: block;
+  font-size: 1.92cqw;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.projects-divider {
+  position: absolute;
+  top: 125.6cqw;
+  left: 3.55cqw;
+  right: 3.55cqw;
+  height: .85cqw;
+  background: #050505;
+}
+.projects-title {
+  position: absolute;
+  top: 141.35cqw;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 2.25cqw;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1.15;
+}
+.drive-link {
+  position: absolute;
+  top: 147.7cqw;
+  left: 50%;
+  display: block;
+  width: 25.2cqw;
+  height: 22.2cqw;
+  transform: translateX(-50%);
+}
+.drive-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.drive-link:hover { filter: brightness(.98); }
